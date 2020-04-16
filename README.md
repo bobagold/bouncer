@@ -1,3 +1,5 @@
+<img src="https://img.shields.io/pub/v/bouncer.svg" />
+
 # bouncer
 
 Bouncer debounces actions and makes sure any outdated answers will be ignored.
@@ -11,7 +13,7 @@ there can be 2 problems:
 
 This library aims to solve both problems.
 
-[<img src="example/Screenshot1.gif" width="200" />](example)
+[<img src="https://raw.githubusercontent.com/bobagold/bouncer/master/example/Screenshot1.gif" width="200" />](example)
 
 See [example](example) for reference.
 

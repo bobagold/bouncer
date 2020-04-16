@@ -5,8 +5,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:bouncer/bouncer.dart';
 
 void main() {
-  var fastRequest = () => Future.value(3);
-  var slowRequest = () => Future.delayed(Duration(seconds: 3), () => 3);
+  Future<int> fastRequest() => Future.value(3);
+  Future<int> slowRequest() => Future.delayed(Duration(seconds: 3), () => 3);
 
   test('NoBouncer lets everyone', () {
     final bouncer = NoBouncer();
@@ -52,10 +52,11 @@ void main() {
     final bouncer = TimerBouncer(Duration(seconds: 3));
     var completer1 = Completer();
     var completer2 = Completer();
-    var fastRequestThatWillNotRun = () {
+    Future<int> fastRequestThatWillNotRun() {
       completer1.complete();
       return Future.value(3);
-    };
+    }
+
     var subscription = bouncer.debounce(
       request: fastRequestThatWillNotRun,
       responseHandler: completer2.complete,

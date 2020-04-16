@@ -1,0 +1,11 @@
+name: bouncer_example
+description: Bouncer debounces actions and makes sure any long-running requests will be ignored.
+version: 0.1.0
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  bouncer:

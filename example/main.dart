@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
     var rand = Random();
     return Future.delayed(
       Duration(seconds: rand.nextInt(2)),
-          () => search.toUpperCase(),
+      () => search.toUpperCase(),
     );
   }
 
@@ -66,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  /// dispose our subscription so they cannot call setState
   @override
   dispose() {
     _debounceSubscription?.cancel();
