@@ -1,4 +1,5 @@
-<img src="https://img.shields.io/pub/v/bouncer.svg" />
+[![Build Status](https://travis-ci.org/bobagold/bouncer.svg?branch=master)](https://travis-ci.org/bobagold/bouncer)
+[![pub package](https://img.shields.io/pub/v/bouncer.svg)](https://pub.dev/packages/bouncer) [![codecov](https://codecov.io/gh/bobagold/bouncer/branch/master/graph/badge.svg)](https://codecov.io/gh/bobagold/bouncer)
 
 # bouncer
 

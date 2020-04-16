@@ -25,7 +25,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Subscription _debounceSubscription;
 
   // for example, get the configured bouncer from context
-  // default - no bouncing, good for tests ans such
+  // default - no bouncing, good for tests and such
   Bouncer _bouncer(BuildContext context) {
     if (_bouncerIsOn) {
       return TimerBouncer(Duration(milliseconds: 200));
