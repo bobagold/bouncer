@@ -11,9 +11,9 @@ there can be 2 problems:
 
 This library aims to solve both problems.
 
-[<img src="examples/Screenshot1.gif" width="200" />](examples)
+[<img src="example/Screenshot1.gif" width="200" />](example)
 
-See [examples](examples) for reference.
+See [example](example) for reference.
 
 ## Usage
 

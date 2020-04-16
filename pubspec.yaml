@@ -1,8 +1,7 @@
 name: bouncer
 description: Bouncer debounces actions and makes sure any long-running requests will be ignored.
 version: 0.0.1
-author:
-homepage:
+homepage: https://github.com/bobagold/bouncer
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
