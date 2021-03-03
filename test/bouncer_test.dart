@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 
 import 'package:bouncer/bouncer.dart';
 
@@ -25,7 +25,7 @@ void main() {
       request: fastRequest,
       responseHandler: completer.complete,
     );
-    expect(subscription, isInstanceOf<Subscription>());
+    expect(subscription, isA<Subscription>());
     expect(completer.future, completes);
   });
   test('double cancel makes no harm', () {
