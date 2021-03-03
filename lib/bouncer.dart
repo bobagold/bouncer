@@ -18,8 +18,8 @@ class Subscription {
 
   /// constructor
   Subscription({
-    @required this.timer,
-    @required this.subscription,
+    required this.timer,
+    required this.subscription,
   });
 
   /// cancels both timer and subscription to results
@@ -36,10 +36,10 @@ class Subscription {
 // ignore: one_member_abstracts
 abstract class Bouncer {
   /// debounce user action from response handler and previous action
-  Subscription debounce<T>({
-    @required ValueGetter<Future<T>> request,
-    @required ValueSetter<T> responseHandler,
-    Subscription oldSubscription,
+  Subscription? debounce<T>({
+    required ValueGetter<Future<T>> request,
+    required ValueSetter<T> responseHandler,
+    Subscription? oldSubscription,
   });
 }
 
@@ -47,10 +47,10 @@ abstract class Bouncer {
 @immutable
 class NoBouncer extends Bouncer {
   @override
-  Subscription debounce<T>({
-    @required ValueGetter<Future<T>> request,
-    @required ValueSetter<T> responseHandler,
-    Subscription oldSubscription,
+  Subscription? debounce<T>({
+    required ValueGetter<Future<T>> request,
+    required ValueSetter<T> responseHandler,
+    Subscription? oldSubscription,
   }) {
     oldSubscription?.cancel();
     request().then(responseHandler);
@@ -69,9 +69,9 @@ class TimerBouncer extends Bouncer {
 
   @override
   Subscription debounce<T>({
-    @required ValueGetter<Future<T>> request,
-    @required ValueSetter<T> responseHandler,
-    Subscription oldSubscription,
+    required ValueGetter<Future<T>> request,
+    required ValueSetter<T> responseHandler,
+    Subscription? oldSubscription,
   }) {
     oldSubscription?.cancel();
     var subscriptionCompleter = Completer<StreamSubscription<T>>();

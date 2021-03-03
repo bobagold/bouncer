@@ -13,7 +13,7 @@ void main() {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key}) : super(key: key);
+  MyHomePage({Key? key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -22,7 +22,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String _result = 'No results so far';
   bool _bouncerIsOn = false;
-  Subscription _debounceSubscription;
+  Subscription? _debounceSubscription;
 
   // for example, get the configured bouncer from context
   // default - no bouncing, good for tests and such
@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
     _debounceSubscription = _bouncer(context).debounce(
       request: () => _longRunningRequest(search),
       responseHandler: _responseHandler,
-      oldSubscription: _debounceSubscription,
+      oldSubscription: _debounceSubscription!,
     );
   }
 
